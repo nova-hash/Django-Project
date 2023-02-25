@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form in html</title>
+</head>
+
+<body>
+<form  method="POST" action="{% url 'fetchdata'%}" >
+    {% csrf_token %}
+
+    <label for="Full_Name"><b>Full Name *</b></label><br/>
+    <input class="form-control" name="Full_Name" id="Full_Name"  type="text" placeholder="surajgupta" /><br/>
+
+    <label for="Email"><b>Email *</b></label><br/>
+    <input class="form-control" name="Email" id="Email"  type="text" placeholder="dsfrgsr@gmail.com" /><br/>
+
+    <label for="Address"><b>Address *</b></label><br/>
+    <input class="form-control" name="Address" id="Address"  type="text" placeholder="45 afadsfdasfsaf fsd sdfasf" /><br/>
+
+    <label for="Password"><b>Password *</b></label><br/>
+    <input class="form-control" name="Password" id="Password"  type="password" placeholder="*********" /><br/>
+
+    <label for="Mobile_no"><b>Mobile no *</b></label><br/>
+    <input class="form-control" name="Mobile_no" id="Mobile_no"  type="text" placeholder="46589451326" /><br/>
+
+
+    <input type="submit" name='submit' value="Upload">
+</form>
+
+<a href="/login">login</a>
+
+
+
+</body>
+</html>

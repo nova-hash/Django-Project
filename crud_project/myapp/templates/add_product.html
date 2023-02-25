@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+</head>
+<body>
+<h2>Add product</h2>
+<form action="/insertdata" enctype="multipart/form-data" >
+    Name: <input type="text" name="pname"><br>
+    Price: <input type="text" name="pprice"><br>
+    Descriptin: <textarea type="text" name="pdesc" rows="3" cols="15"></textarea><br>
+    Image: <input type="file" name="pimage"><br>
+    <input type="submit" name="submit" value="Add Product"><br>
+
+</form>
+
+{% if messages %}
+{% for msg in messages%}
+<p>{{msg}}</p>
+{% endfor%}
+{% endif %}
+
+</body>
+</html>

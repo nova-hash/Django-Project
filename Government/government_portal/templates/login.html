@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+<form method="post" action=" {% url 'checklogin' %}">
+     {% csrf_token %}
+    <label for="username"><b>username *</b></label><br/>
+    <input class="form-control" name="username" id="username"  type="text" placeholder="umesh" /><br/>
+    <label for="Password"><b>Password *</b></label><br/>
+    <input class="form-control" name="Password" id="Password"  type="password" placeholder="*********" /><br/>
+
+    <input type="submit" name='submit' value="Upload">
+</form>
+
+
+
+</body>
+</html>
