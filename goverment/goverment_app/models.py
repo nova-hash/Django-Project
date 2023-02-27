@@ -40,18 +40,18 @@ class registertable(models.Model):
 
 
 class policytable(models.Model):
-    policyname = models.CharField(max_length=120)
-    policydetails = models.TextField()
-    policytype = models.CharField(max_length=100)
-    policyphoto = models.ImageField(upload_to='photos')
-    policyAgency = models.CharField(max_length=100)
-    policyTargetAudience = models.CharField(max_length=100)
-    policyEligibleCastes = models.CharField(max_length=30)
-    policyApplicableState = models.CharField(max_length=30)
-    policyResidenceArea = models.CharField(max_length=30)
-    policyDisabilityStatus = models.CharField(max_length=30)
-    policyMinorityStatus = models.CharField(max_length=30)
-    policyBPLStatus = models.CharField(max_length=30)
+    policyname = models.CharField(max_length=120, null=True)
+    policydetails = models.TextField(null=True)
+    policytype = models.CharField(max_length=100, null=True)
+    policyphoto = models.ImageField(upload_to='photos', null=True)
+    policyAgency = models.CharField(max_length=100, null=True)
+    policyTargetAudience = models.CharField(max_length=100, null=True)
+    policyEligibleCastes = models.CharField(max_length=30, null=True)
+    policyApplicableState = models.CharField(max_length=30, null=True)
+    policyResidenceArea = models.CharField(max_length=30, null=True)
+    policyDisabilityStatus = models.CharField(max_length=30, null=True)
+    policyMinorityStatus = models.CharField(max_length=30, null=True)
+    policyBPLStatus = models.CharField(max_length=30, null=True)
     policyurl = models.CharField(max_length=100, null=True)
 
     def admin_photo(self):

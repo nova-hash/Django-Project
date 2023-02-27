@@ -18,5 +18,6 @@ urlpatterns = [
     path('fetchdata', views.fetchdata, name='fetchdata'),
     path('checklogin', views.checklogin, name='checklogin'),
     path('login', views.loginpage, name='login'),
-] + static(settings.MEDIA_URL, doctument_root=settings.MEDIA_ROOT)
+]
+
 
