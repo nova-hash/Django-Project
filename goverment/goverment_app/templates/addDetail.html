@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Add Detail</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<!-- SignUp start  -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+               \
+                <div class="col-lg-7">
+                    <div class="section-title position-relative mb-4">
+                        <h1 class="display-5">ADD YOUR DETAIL BELOW</h1>
+                    </div>
+                    <div class="contact-form">
+                        <form method="post" action=" {% url 'fetchdata' %}">
+                             {% csrf_token %}
+
+                            <div class="col-6 form-group">
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your First Name" name="first-name" required="required"><br>
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Middle Name" name="middle-name" required="required"><br>
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Last Name" name="last-name" required="required"><br>
+                                <input type="number" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Phone Number" name="phone_no" required="required"><br>
+                                <input type="number" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Age" name="age" required="required"><br>
+
+                                <label for="gender">Gender:</label>
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">Male</label>
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                                <input type="radio" id="other" name="gender" value="other">
+                                <label for="other">Other</label><br><br>
+
+                                  <label for="cast">Cast:</label>
+                                  <select id="cast" name="cast">
+                                  <option value="All Cast">All Cast</option>
+                                  <option value="General">General</option>
+                                  <option value="ST">ST</option>
+                                  <option value="SC">SC</option>
+                                  <option value="OBC">OBC</option>
+                                </select><br><br>
+
+                                 <label for="DisabilityStatus">DisabilityStatus:</label>
+                                <input type="radio" id="YES" name="DisabilityStatus" value="YES">
+                                <label for="YES">YES</label>
+                                <input type="radio" id="NO" name="DisabilityStatus" value="NO">
+                                <label for="NO">NO</label><br><br>
+
+                                <label for="MinorityStatus">MinorityStatus:</label>
+                                <input type="radio" id="MYES" name="MinorityStatus" value="YES">
+                                <label for="YES">YES</label>
+                                <input type="radio" id="MNO" name="MinorityStatus" value="NO">
+                                <label for="NO">NO</label><br><br>
+
+
+                                 <label for="BPLStatus">BPLStatus:</label>
+                                <input type="radio" id="bYES" name="BPLStatus" value="YES">
+                                <label for="YES">YES</label>
+                                <input type="radio" id="bNO" name="BPLStatus" value="NO">
+                                <label for="NO">NO</label>
+<br><br>
+
+
+
+
+
+
+
+
+                                <label for="ResidenceArea">ResidenceArea:</label>
+                                <input type="radio" id="Urban" name="ResidenceArea" value="Urban">
+                                <label for="Urban">Urban</label>
+                                <input type="radio" id="Rural" name="ResidenceArea" value="Rural">
+                                <label for="Rural">Rural</label><br><br>
+                                <label for="file-upload">Upload File:</label>
+                                <input type="file" id="file-upload" name="file-upload"><br><br>
+                                </div><br><br>
+
+                            <div>
+                                <button class="btn btn-primary py-3 px-5" name='submit' value="Upload" type="submit">REGISTRATION </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- SignUp End -->
+
+</body>
+</html>

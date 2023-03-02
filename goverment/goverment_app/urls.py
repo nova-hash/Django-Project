@@ -11,6 +11,7 @@ urlpatterns = [
     path('about', views.aboutpage, name="about"),
     path('schemes', views.schemespage, name="schemes"),
     path('detail', views.detailpage, name="detail"),
+    path('details/<int:id>', views.detailpage, name="detail"),
     path('feature', views.featurepage, name="feature"),
     path('team', views.teampage, name="team"),
     path('testimonial', views.testimonialpage, name="testimonial"),
@@ -18,6 +19,7 @@ urlpatterns = [
     path('fetchdata', views.fetchdata, name='fetchdata'),
     path('checklogin', views.checklogin, name='checklogin'),
     path('login', views.loginpage, name='login'),
+    path('addDatail', views.addDetailpage, name='addDatail'),
 ]
 
 

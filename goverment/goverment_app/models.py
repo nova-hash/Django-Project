@@ -23,6 +23,10 @@ class aadharcardtable(models.Model):
     cast = models.CharField(max_length=30)
     gender = models.IntegerField(choices=CHOICE2)
     document = models.FileField()
+    ResidenceArea = models.CharField(max_length=30, null=True)
+    DisabilityStatus = models.CharField(max_length=30, null=True)
+    MinorityStatus = models.CharField(max_length=30, null=True)
+    BPLStatus = models.CharField(max_length=30, null=True)
 
     def __str__(self):
         return self.aadharnumber
@@ -37,6 +41,7 @@ class registertable(models.Model):
     status = models.IntegerField(choices=CHOICE1, null=True)
     role = models.IntegerField(null=True)
     aadharid = models.ForeignKey(aadharcardtable, on_delete=models.CASCADE, null=True)
+
 
 
 class policytable(models.Model):

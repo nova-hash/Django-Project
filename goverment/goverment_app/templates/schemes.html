@@ -135,102 +135,103 @@
                 </div>
             </div>
             <div class="row">
+                {% for i in data %}
                 <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">
-                        <img class="img-fluid" src="{% static 'img/schemes-1.jpg' %}" alt="">
+                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="/details/{{ i.id }}">
+                        <img class="img-fluid" src="/media/{{ i.policyphoto }}" alt="" height="350px" width="350px">
                         <div class="schemes-text">
-                            <h4 class="text-center text-white px-3">Web design & development schemes for
-                                beginners</h4>
+                            <h4 class="text-center text-white px-3">{{ i.policyname }}</h4>
                             <div class="border-top w-100 mt-3">
                                 <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
+                                    <span class="text-white"><i class="fa fa-user mr-2"></i>{{ i.policyTargetAudience }}</span>
+                                    <span class="text-white">{{ i.policytype }}
+                                        <small></small></span>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">
-                        <img class="img-fluid" src="{% static 'img/schemes-2.jpg' %}" alt="">
-                        <div class="schemes-text">
-                            <h4 class="text-center text-white px-3">Web design & development schemes for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">
-                        <img class="img-fluid" src="{% static 'img/schemes-3.jpg' %}" alt="">
-                        <div class="schemes-text">
-                            <h4 class="text-center text-white px-3">Web design & development schemes for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">
-                        <img class="img-fluid" src="{% static 'img/schemes-4.jpg' %}" alt="">
-                        <div class="schemes-text">
-                            <h4 class="text-center text-white px-3">Web design & development schemes for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">
-                        <img class="img-fluid" src="{% static 'img/schemes-5.jpg' %}" alt="">
-                        <div class="schemes-text">
-                            <h4 class="text-center text-white px-3">Web design & development schemes for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 pb-4">
-                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">
-                        <img class="img-fluid" src="{% static 'img/schemes-6.jpg' %}" alt="">
-                        <div class="schemes-text">
-                            <h4 class="text-center text-white px-3">Web design & development schemes for
-                                beginners</h4>
-                            <div class="border-top w-100 mt-3">
-                                <div class="d-flex justify-content-between p-4">
-                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5
-                                        <small>(250)</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                {% endfor %}
+<!--                <div class="col-lg-4 col-md-6 pb-4">-->
+<!--                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">-->
+<!--                        <img class="img-fluid" src="{% static 'img/schemes-2.jpg' %}" alt="">-->
+<!--                        <div class="schemes-text">-->
+<!--                            <h4 class="text-center text-white px-3">Web design & development schemes for-->
+<!--                                beginners</h4>-->
+<!--                            <div class="border-top w-100 mt-3">-->
+<!--                                <div class="d-flex justify-content-between p-4">-->
+<!--                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>-->
+<!--                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5-->
+<!--                                        <small>(250)</small></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6 pb-4">-->
+<!--                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">-->
+<!--                        <img class="img-fluid" src="{% static 'img/schemes-3.jpg' %}" alt="">-->
+<!--                        <div class="schemes-text">-->
+<!--                            <h4 class="text-center text-white px-3">Web design & development schemes for-->
+<!--                                beginners</h4>-->
+<!--                            <div class="border-top w-100 mt-3">-->
+<!--                                <div class="d-flex justify-content-between p-4">-->
+<!--                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>-->
+<!--                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5-->
+<!--                                        <small>(250)</small></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6 pb-4">-->
+<!--                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">-->
+<!--                        <img class="img-fluid" src="{% static 'img/schemes-4.jpg' %}" alt="">-->
+<!--                        <div class="schemes-text">-->
+<!--                            <h4 class="text-center text-white px-3">Web design & development schemes for-->
+<!--                                beginners</h4>-->
+<!--                            <div class="border-top w-100 mt-3">-->
+<!--                                <div class="d-flex justify-content-between p-4">-->
+<!--                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>-->
+<!--                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5-->
+<!--                                        <small>(250)</small></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6 pb-4">-->
+<!--                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">-->
+<!--                        <img class="img-fluid" src="{% static 'img/schemes-5.jpg' %}" alt="">-->
+<!--                        <div class="schemes-text">-->
+<!--                            <h4 class="text-center text-white px-3">Web design & development schemes for-->
+<!--                                beginners</h4>-->
+<!--                            <div class="border-top w-100 mt-3">-->
+<!--                                <div class="d-flex justify-content-between p-4">-->
+<!--                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>-->
+<!--                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5-->
+<!--                                        <small>(250)</small></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6 pb-4">-->
+<!--                    <a class="schemes-list-item position-relative d-block overflow-hidden mb-2" href="{% url 'detail' %}">-->
+<!--                        <img class="img-fluid" src="{% static 'img/schemes-6.jpg' %}" alt="">-->
+<!--                        <div class="schemes-text">-->
+<!--                            <h4 class="text-center text-white px-3">Web design & development schemes for-->
+<!--                                beginners</h4>-->
+<!--                            <div class="border-top w-100 mt-3">-->
+<!--                                <div class="d-flex justify-content-between p-4">-->
+<!--                                    <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>-->
+<!--                                    <span class="text-white"><i class="fa fa-star mr-2"></i>4.5-->
+<!--                                        <small>(250)</small></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </a>-->
+<!--                </div>-->
                 <div class="col-12">
                     <nav aria-label="Page navigation">
                         <ul class="pagination pagination-lg justify-content-center mb-0">

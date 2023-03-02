@@ -7,7 +7,7 @@ from .models import aadharcardtable, registertable, applicationtable, policytabl
 
 class showaadharcardtable(admin.ModelAdmin):
     list_display = ['aadharnumber', 'firstname', 'middlename', 'lastname', 'address', 'phonenumber', 'dob', 'cast',
-                    'gender', 'document']
+                    'gender', 'document', 'ResidenceArea', 'DisabilityStatus', 'MinorityStatus', 'BPLStatus']
 
 
 class showregistrationtable(admin.ModelAdmin):

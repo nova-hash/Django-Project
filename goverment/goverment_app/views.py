@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render
 
-from goverment_app.models import registertable
+from goverment_app.models import registertable, policytable
 
 
 def aboutpage(request):
@@ -26,12 +26,18 @@ def fetchdata(request):
         messages.success(request, 'YOU ARE REGISTERED NOW ')
 
     else:
-        messages.error(request, "error ")
+        messages.error(request, "error")
 
     return render(request, "index.html")
 
+
 def loginpage(request):
     return render(request, 'login.html')
+
+
+def addDetailpage(request):
+    return render(request, 'addDetail.html')
+
 
 def checklogin(request):
     if request.method == 'POST':
@@ -56,6 +62,7 @@ def checklogin(request):
 
     return render(request, 'login.html')
 
+
 def contactpage(request):
     return render(request, 'contact.html')
 
@@ -64,12 +71,20 @@ def indexpage(request):
     return render(request, 'index.html')
 
 
-def detailpage(request):
-    return render(request, 'detail.html')
+def detailpage(request, id):
+    query = policytable.objects.get(id=id)
+    details = {
+        'data': query
+    }
+    return render(request, 'detail.html', details)
 
 
 def schemespage(request):
-    return render(request, 'schemes.html')
+    query = policytable.objects.all()
+    details = {
+        'data': query
+    }
+    return render(request, 'schemes.html', details)
 
 
 def featurepage(request):
