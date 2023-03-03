@@ -1,7 +1,6 @@
 from django.contrib import messages
-from django.shortcuts import render
-
-from goverment_app.models import registertable, policytable
+from django.shortcuts import render, redirect
+from goverment_app.models import registertable, policytable, aadharcardtable
 
 
 def aboutpage(request):
@@ -10,6 +9,31 @@ def aboutpage(request):
 
 def signUpPage(request):
     return render(request, 'signup.html')
+
+
+def addData(request):
+    if request.method == 'POST':
+        firstname = request.POST.get('first_name')
+        middlename = request.POST.get('middle_name')
+        lastname = request.POST.get('last_name')
+        phone_no = request.POST.get('phone_no')
+        age = request.POST.get('age')
+        gender = request.POST.get('gender')
+        cast = request.POST.get('cast')
+        disabilityStatus = request.POST.get('disabilityStatus')
+        minorityStatus = request.POST.get('minorityStatus')
+        BPLStatus = request.POST.get('BPLStatus')
+        ResidenceArea = request.POST.get('ResidenceArea')
+
+        query = aadharcardtable(firstname=firstname, middlename=middlename, lastname=lastname, phonenumber=phone_no,
+                                dob=age, gender=gender, cast=cast, DisabilityStatus=disabilityStatus,
+                                MinorityStatus=minorityStatus, BPLStatus=BPLStatus, ResidenceArea=ResidenceArea)
+        query.save()
+
+    else:
+        pass
+
+    return render(request, 'index.html')
 
 
 def fetchdata(request):
@@ -97,3 +121,14 @@ def teampage(request):
 
 def testimonialpage(request):
     return render(request, 'testimonial.html')
+
+
+def logout(request):
+    try:
+        del request.session['loginid']
+        del request.session['loginname']
+
+    except:
+        print("jdsgjbf")
+        pass
+    return redirect(indexpage)

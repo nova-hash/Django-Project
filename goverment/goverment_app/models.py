@@ -13,16 +13,16 @@ CHOICE2 = [
 
 
 class aadharcardtable(models.Model):
-    aadharnumber = models.BigIntegerField()
+    aadharnumber = models.BigIntegerField(null=True)
     firstname = models.CharField(max_length=30)
     middlename = models.CharField(max_length=30, null=True)
     lastname = models.CharField(max_length=30)
-    address = models.TextField()
+    address = models.TextField(null=True)
     phonenumber = models.BigIntegerField()
-    dob = models.DateField()
+    dob = models.IntegerField()
     cast = models.CharField(max_length=30)
-    gender = models.IntegerField(choices=CHOICE2)
-    document = models.FileField()
+    gender = models.CharField(null=True, max_length=10)
+    document = models.FileField(null=True)
     ResidenceArea = models.CharField(max_length=30, null=True)
     DisabilityStatus = models.CharField(max_length=30, null=True)
     MinorityStatus = models.CharField(max_length=30, null=True)
@@ -80,3 +80,4 @@ class feedbacktable(models.Model):
     regid = models.ForeignKey(registertable, on_delete=models.CASCADE, null=True)
     feedbackdesk = models.CharField(max_length=30)
     timestamp = models.DateField
+

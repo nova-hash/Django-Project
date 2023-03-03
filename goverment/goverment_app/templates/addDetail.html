@@ -24,86 +24,87 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
+<style>
+
+</style>
 <body>
 
 <!-- SignUp start  -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="row align-items-center">
-               \
+               
                 <div class="col-lg-7">
                     <div class="section-title position-relative mb-4">
                         <h1 class="display-5">ADD YOUR DETAIL BELOW</h1>
                     </div>
                     <div class="contact-form">
-                        <form method="post" action=" {% url 'fetchdata' %}">
+                        <form method="post" action="{% url 'addData' %}" enctype="multipart/form-data">
                              {% csrf_token %}
 
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your First Name" name="first-name" required="required"><br>
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Middle Name" name="middle-name" required="required"><br>
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Last Name" name="last-name" required="required"><br>
+                            <div class="col-6 form-group" >
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your First Name" name="first_name" required="required"><br>
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Middle Name" name="middle_name" required="required"><br>
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Last Name" name="last_name" required="required"><br>
                                 <input type="number" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Phone Number" name="phone_no" required="required"><br>
                                 <input type="number" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Age" name="age" required="required"><br>
 
-                                <label for="gender">Gender:</label>
-                                <input type="radio" id="male" name="gender" value="male">
+                                Gender:
+                                <input type="radio" id="male" name="gender" value="male" required="required">
                                 <label for="male">Male</label>
-                                <input type="radio" id="female" name="gender" value="female">
+                                <input type="radio" id="female" name="gender" value="female" required="required">
                                 <label for="female">Female</label>
-                                <input type="radio" id="other" name="gender" value="other">
+                                <input type="radio" id="other" name="gender" value="other" required="required">
                                 <label for="other">Other</label><br><br>
 
-                                  <label for="cast">Cast:</label>
-                                  <select id="cast" name="cast">
-                                  <option value="All Cast">All Cast</option>
-                                  <option value="General">General</option>
-                                  <option value="ST">ST</option>
-                                  <option value="SC">SC</option>
-                                  <option value="OBC">OBC</option>
+                                <label for="cast">Cast:</label>
+                                <select id="cast" name="cast" required="required">
+                                <option value="All Cast">All Cast</option>
+                                <option value="General">General</option>
+                                <option value="ST">ST</option>
+                                <option value="SC">SC</option>
+                                <option value="OBC">OBC</option>
                                 </select><br><br>
 
-                                 <label for="DisabilityStatus">DisabilityStatus:</label>
-                                <input type="radio" id="YES" name="DisabilityStatus" value="YES">
+                                DisabilityStatus:
+                                <input type="radio" id="YES" name="disabilityStatus" value="YES" required="required">
                                 <label for="YES">YES</label>
-                                <input type="radio" id="NO" name="DisabilityStatus" value="NO">
+                                <input type="radio" id="NO" name="disabilityStatus" value="NO" required="required">
                                 <label for="NO">NO</label><br><br>
 
-                                <label for="MinorityStatus">MinorityStatus:</label>
-                                <input type="radio" id="MYES" name="MinorityStatus" value="YES">
+                                MinorityStatus:
+                                <input type="radio" id="MYES" name="minorityStatus" value="YES" required="required">
                                 <label for="YES">YES</label>
-                                <input type="radio" id="MNO" name="MinorityStatus" value="NO">
+                                <input type="radio" id="MNO" name="minorityStatus" value="NO" required="required">
                                 <label for="NO">NO</label><br><br>
 
 
-                                 <label for="BPLStatus">BPLStatus:</label>
-                                <input type="radio" id="bYES" name="BPLStatus" value="YES">
+                                BPLStatus:
+                                <input type="radio" id="bYES" name="BPLStatus" value="YES" required="required">
                                 <label for="YES">YES</label>
-                                <input type="radio" id="bNO" name="BPLStatus" value="NO">
-                                <label for="NO">NO</label>
-<br><br>
+                                <input type="radio" id="bNO" name="BPLStatus" value="NO" required="required">
+                                <label for="NO">NO</label><br><br>
 
-
-
-
-
-
-
-
-                                <label for="ResidenceArea">ResidenceArea:</label>
-                                <input type="radio" id="Urban" name="ResidenceArea" value="Urban">
+                                ResidenceArea:
+                                <input type="radio" id="Urban" name="ResidenceArea" value="Urban " required="required">
                                 <label for="Urban">Urban</label>
-                                <input type="radio" id="Rural" name="ResidenceArea" value="Rural">
-                                <label for="Rural">Rural</label><br><br>
-
-                                <label for="file-upload">Upload File:</label>
-                                <input type="file" id="file-upload" name="file-upload"><br><br>
-                                </div><br><br>
+                                <input type="radio" id="Rural" name="ResidenceArea" value="Rural" required="required">
+                                <label for="Rural">Rural</label>
+                            </div>
 
                             <div>
-                                <button class="btn btn-primary py-3 px-5" name='submit' value="Upload" type="submit">REGISTRATION </button>
+                                <label for="profile_pic" >	&nbsp;&nbsp;  Choose file to upload : </label>
+                                <input type="file" id="profile_pic" name="profile_pic" accept=".jpg, .jpeg, .png" />
+                            </div><br>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button class="btn btn-primary py-3 px-5" name='submit' value="Upload" type="submit"> REGISTRATION </button>
                             </div>
+
+
                         </form>
+
                     </div>
                 </div>
             </div>

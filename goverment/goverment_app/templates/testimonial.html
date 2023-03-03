@@ -85,7 +85,11 @@
                     </div>
                     <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
+                {% if request.session.loginid %}
+                 <a href="{% url 'logout'%}" class="btn btn-primary py-2 px-4 d-none d-lg-block">LogOut</a>
+                {% else %}
+                <a href="{% url 'login'%}" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
+                {% endif %}
             </div>
         </nav>
     </div>
