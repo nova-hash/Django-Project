@@ -531,6 +531,11 @@ mark,
   height: auto;
 }
 
+.img-fluidgg {
+  max-width: 500px;
+  height: 500px;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #FFFFFF;

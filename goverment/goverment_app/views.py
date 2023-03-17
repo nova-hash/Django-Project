@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from goverment_app.models import registertable, policytable, aadharcardtable
+from goverment_app.models import registertable, policytable, aadharcardtable, feedbacktable
 
 
 def aboutpage(request):
@@ -34,6 +34,21 @@ def addData(request):
         pass
 
     return render(request, 'index.html')
+
+
+def feedback1(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        queue = feedbacktable(name=name, email=email, subject=subject, feedbackdesk=message)
+        queue.save()
+
+    else:
+        pass
+    return render(request, 'contact.html')
 
 
 def fetchdata(request):
@@ -92,7 +107,11 @@ def contactpage(request):
 
 
 def indexpage(request):
-    return render(request, 'index.html')
+    query = policytable.objects.all()
+    details = {
+        'data': query
+    }
+    return render(request, 'index.html', details)
 
 
 def detailpage(request, id):

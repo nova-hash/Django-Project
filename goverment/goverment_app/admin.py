@@ -25,7 +25,7 @@ class showpolicytable(admin.ModelAdmin):
 
 
 class showfeedbacktable(admin.ModelAdmin):
-    list_display = ['regid', 'feedbackdesk', 'timestamp']
+    list_display = ['feedbackdesk', 'timestamp']
 
 
 admin.site.register(aadharcardtable, showaadharcardtable)

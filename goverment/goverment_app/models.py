@@ -43,7 +43,6 @@ class registertable(models.Model):
     aadharid = models.ForeignKey(aadharcardtable, on_delete=models.CASCADE, null=True)
 
 
-
 class policytable(models.Model):
     policyname = models.CharField(max_length=120, null=True)
     policydetails = models.TextField(null=True)
@@ -77,7 +76,10 @@ class applicationtable(models.Model):
 
 
 class feedbacktable(models.Model):
-    regid = models.ForeignKey(registertable, on_delete=models.CASCADE, null=True)
-    feedbackdesk = models.CharField(max_length=30)
-    timestamp = models.DateField
+    email = models.EmailField(null=True)
+    subject = models.CharField(max_length=50, null=True)
+    name = models.CharField(max_length=50, null=True)
+    feedbackdesk = models.TextField(null=True)
+    timestamp = models.DateTimeField(auto_now_add=True,null=True)
+
 
